@@ -5,14 +5,14 @@ El proyecto está construido con **NestJS**, **TypeORM**, **PostgreSQL**, **Dock
 
 Incluye:
 
-- CRUD de hoteles  
-- CRUD de habitaciones  
-- CRUD de reservas  
-- Validación de **solapamiento de reservas**  
-- Autenticación mediante **API Key**  
-- Migraciones  
-- Tests básicos con Jest  
-- Archivo `AGENTS.md` para trabajo asistido con IA  
+- Operaciones esenciales de creación y consulta para **Hoteles**
+- Operaciones esenciales de creación y consulta para **Habitaciones**
+- Operaciones esenciales de creación y consulta para **Reservas**
+- Validación de **solapamiento de reservas**
+- Autenticación mediante **API Key**
+- Migraciones
+- Tests básicos con Jest
+- Archivo `AGENTS.md` para trabajo asistido con IA
 
 ---
 
@@ -27,7 +27,6 @@ Incluye:
 | **Docker** | Última versión |
 | **Docker Compose** | Última versión |
 
-> Si usás Docker, no necesitás instalar PostgreSQL localmente.
 
 ---
 
@@ -50,7 +49,7 @@ Luego completar los valores necesarios:
 ```env
 # App
 APP_PORT=3000
-API_KEY=123456
+API_KEY=supersecreta123
 
 # Database
 POSTGRES_HOST=postgres
@@ -117,16 +116,14 @@ Necesitás tener PostgreSQL corriendo localmente con los valores del `.env`.
 ### 🧱 Ejecutar migraciones
 
 ```bash
-npm typeorm migration:run
+npm migration:run
 ```
 
 ### 🧪 Revertir migraciones (opcional)
 
 ```bash
-npm typeorm migration:revert
+npm migration:revert
 ```
-
-> El proyecto no incluye seeds por defecto, pero podés agregar los tuyos en `src/seeds`.
 
 ---
 
@@ -140,12 +137,6 @@ Tests unitarios (verbose):
 
 ```bash
 npm test:watch
-```
-
-Tests e2e (si existen):
-
-```bash
-npm test:e2e
 ```
 
 ---
@@ -174,7 +165,7 @@ Todas las rutas con prefijo `/api/*` requieren la API Key.
 ### Ejemplo usando **cURL**:
 
 ```bash
-curl -H "x-api-key: 123456" http://localhost:3000/api/hotels
+curl -H "x-api-key: supersecreta123" http://localhost:3000/api/hotels
 ```
 
 ### Ejemplo en **Postman / Insomnia**:
@@ -182,7 +173,7 @@ curl -H "x-api-key: 123456" http://localhost:3000/api/hotels
 Header:
 
 ```
-x-api-key: 123456
+x-api-key: supersecreta123
 ```
 
 ### Ejemplo en **Swagger**:
