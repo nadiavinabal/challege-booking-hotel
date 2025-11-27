@@ -196,6 +196,18 @@ npm typeorm migration:run   # Correr migraciones
 
 ---
 
+## 🚀 Deploy en Render
+
+La API está actualmente desplegada en **Render**.
+
+### 📄 Documentación Swagger (API Docs)
+
+Puedes acceder a la documentación pública de la API en el siguiente enlace:
+
+👉 **https://challege-booking-hotel.onrender.com/docs#/**
+
+---
+
 ## 🧠 Archivo AGENTS.md
 
 El proyecto contiene un archivo `AGENTS.md` para que herramientas de IA como Cursor, Copilot o Claude Code entiendan la arquitectura del proyecto, reglas de negocio y convenciones internas.
